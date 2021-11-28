@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printing_functions.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: asouinia <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asouinia <asouinia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 02:12:52 by asouinia          #+#    #+#             */
-/*   Updated: 2021/11/28 02:12:55 by asouinia         ###   ########.fr       */
+/*   Updated: 2021/11/28 15:49:00 by asouinia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-int	ft_printhex(size_t n, int lower_upper, int counter)
+int	ft_printhex(unsigned long n, int lower_upper, int counter)
 {
 	char	*set;
 
@@ -54,18 +54,13 @@ int	ft_printhex(size_t n, int lower_upper, int counter)
 		set = "0123456789abcdef";
 	if (n < 16 && n >= 0)
 		return (ft_putchar(set[n]));
-	if (n < 0)
-	{
-		ft_putchar('-');
-		return (ft_printhex(n * -1, lower_upper, 1));
-	}
 	counter = ft_printhex(n / 16, lower_upper, counter);
 	ft_putchar(set[n % 16]);
 	counter++;
 	return (counter);
 }
 
-int	ft_address(size_t addr)
+int	ft_address(unsigned long addr)
 {
 	ft_putchar('0');
 	ft_putchar('x');

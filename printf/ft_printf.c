@@ -6,7 +6,7 @@
 /*   By: asouinia <asouinia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 17:40:31 by asouinia          #+#    #+#             */
-/*   Updated: 2021/11/28 02:12:18 by asouinia         ###   ########.fr       */
+/*   Updated: 2021/11/28 17:32:23 by asouinia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ static	int	condition_check(char *str, int total, va_list args)
 	if (*str == 'u')
 		total += ft_putnbr(va_arg(args, unsigned int), 0);
 	if (*str == 'x')
-		total += ft_printhex((size_t)va_arg(args, unsigned int), 0, 0);
+		total += ft_printhex(va_arg(args, unsigned int), 0, 0);
 	if (*str == 'X')
-		total += ft_printhex((size_t)va_arg(args, unsigned int), 1, 0);
+		total += ft_printhex(va_arg(args, unsigned int), 1, 0);
 	if (*str == 'p')
-		total += ft_address((size_t)va_arg(args, void *));
+		total += ft_address((unsigned long)va_arg(args, void *));
 	return (total);
 }
 
